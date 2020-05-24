@@ -9,19 +9,36 @@ import (
 	"strings"
 )
 
+func swap(a, b int32) (int32, int32) {
+	return b, a
+}
+
 func sort(ar []int32) []int32 {
+	n := len(ar)
+	for i := 0; i < n; i++ {
+		for j := i+1; j < n; j++ {
+			if(ar[i] > ar[j]) {
+				ar[i], ar[j] = swap(ar[i],ar[j])
+			}
+		}
+	}
 	return ar
 }
 
 // Complete the sockMerchant function below.
 func sockMerchant(n int32, ar []int32) int32 {
-	for k := 0; k < len(ar); k++ {
-		fmt.Println(k)
-		for l := 0; l< k+1 ; l++{
-			fmt.Println(k, ar[k], " - ", l, ar[l])
+	var counter int32
+	counter = 0
+	arr := sort(ar)
+	for i := 0; i < len(arr); i++ {
+		if i+1 == len(arr) {
+			break
+		} else if arr[i] == arr[i+1] {
+			counter++
+			i += 1
 		}
 	}
-	return n
+	return counter
 }
 
 // https://www.hackerrank.com/challenges/sock-merchant
