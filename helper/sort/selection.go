@@ -1,17 +1,15 @@
 package sort
 
-func swap(a, b int32) (int32, int32) {
-	return b, a
-}
-
-func Selection(ar []int32) []int32 {
-	n := len(ar)
+func Selection(arr []int32) []int32 {
+	n := len(arr)
 	for i := 0; i < n; i++ {
+		min_idx := i
 		for j := i; j < n; j++ {
-			if(ar[j] < ar[i]) {
-				ar[j], ar[i] = swap(ar[j],ar[i])
+			if arr[min_idx] > arr[j] {
+				min_idx = j
 			}
 		}
+		arr[min_idx], arr[i] = swap(arr[min_idx], arr[i])
 	}
-	return ar
+	return arr
 }
