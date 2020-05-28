@@ -16,7 +16,15 @@ func pageCount(n int32, p int32) int32 {
 	/*
 	 * Write your code here.
 	 */
+	midPage := n/2
+	if p <= midPage {
+		return p/2
+	}
 
+	if n%2 == 0 {
+		return (n+1-p)/2
+	}
+	return (n-p)/2
 }
 
 // https://www.hackerrank.com/challenges/drawing-book
