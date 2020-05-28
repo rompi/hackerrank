@@ -25,6 +25,7 @@ func countingValleys(n int32, s string) int32 {
 	return valleyCount
 }
 
+// https://www.hackerrank.com/challenges/counting-valleys
 func main() {
 	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
 
