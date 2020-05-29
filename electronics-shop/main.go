@@ -51,6 +51,7 @@ func getMoneySpent(keyboards []int32, drives []int32, b int32) int32 {
 	return -1
 }
 
+// https://www.hackerrank.com/challenges/electronics-shop
 func main() {
 	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
 
